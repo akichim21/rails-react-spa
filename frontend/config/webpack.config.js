@@ -5,6 +5,7 @@ module.exports = {
   debug: DEBUG,
   devtool: DEBUG ? 'inline-source-map' : false,
   entry: {
+    Todo: "./javascripts/components/Todo.js"
   },
   output: {
     path: '../app/assets/javascripts/components',
