@@ -20,15 +20,13 @@ const store = process.env.NODE_ENV === 'production' ? prodConfigureStore(storeAr
 
 const history = syncHistoryWithStore(browserHistory, store)
 
-//const propTypes = {
-//  token: React.PropTypes.string.isRequired,
-//  email: React.PropTypes.string.isRequired
-//}
+const propTypes = {
+  token: React.PropTypes.string.isRequired,
+}
 
 export default class Todo extends React.Component {
   componentWillMount() {
-    //localStorage.setItem("token", this.props.token)
-    //localStorage.setItem("email", this.props.email)
+    localStorage.setItem("token", this.props.token)
   }
   render() {
     return (
@@ -40,6 +38,6 @@ export default class Todo extends React.Component {
     )
   }
 }
-//Todo.propTypes = propTypes
+Todo.propTypes = propTypes
 
 window.Todo = Todo;

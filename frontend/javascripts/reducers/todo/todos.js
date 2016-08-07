@@ -1,18 +1,16 @@
+import * as types from './../../constants/ActionTypes'
+
 const todo = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
+    case types.ADD_TODO_SUCCESS:
+      return action.response.todo
     case 'TOGGLE_TODO':
       if (state.id !== action.id) {
         return state
       }
 
       return Object.assign({}, state, {
-        completed: !state.completed
+        isCompleted: !state.isCompleted
       })
 
     default:
@@ -22,7 +20,7 @@ const todo = (state = {}, action) => {
 
 const todos = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case types.ADD_TODO_SUCCESS:
       return [
         ...state,
         todo(undefined, action)

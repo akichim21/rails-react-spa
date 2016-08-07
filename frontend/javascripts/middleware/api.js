@@ -24,14 +24,20 @@ function serialize(obj, prefix) {
 
 function callApi(endpoint, param, method = "GET") {
   const fullUrl = "/" + endpoint
+  const token = document.getElementsByTagName("meta")["csrf-token"].getAttribute("content")
   const newParam = Object.assign({}, param, {
-    user_token: localStorage.getItem("token"),
-    user_email: localStorage.getItem("email"),
+    token: token,
   })
   const body = JSON.stringify(newParam)
   const parameter = {
     method: method,
-    body: method == "GET" ? null : body
+    body: method == "GET" ? null : body,
+    credentials: 'same-origin',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': token,
+    }
   }
   const url = method == "GET" ? fullUrl + "?" + serialize(newParam) : fullUrl
 

@@ -1,9 +1,14 @@
-let nextTodoId = 0
-export const addTodo = (text) => {
+import { CALL_API } from './../../constants/Api'
+import * as types from './../../constants/ActionTypes'
+
+export const addTodo = (param) => {
   return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
+    [CALL_API]: {
+      types: [ types.ADD_TODO_REQUEST, types.ADD_TODO_SUCCESS, types.ADD_TODO_FAILURE ],
+      endpoint: 'todo.json',
+      param: { todo: param },
+      method: "POST"
+    }
   }
 }
 
