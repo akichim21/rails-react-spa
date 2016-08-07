@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
-import Index from "./todo/Index"
+import Index from "./todos/Index"
 
 import reducers from './../reducers'
 
@@ -32,7 +32,7 @@ export default class Todo extends React.Component {
     return (
       <Provider store={store}>
         <Router history={history}>
-          <Route path="todo" component={Index}/>
+          <Route path="todos" component={Index}/>
         </Router>
       </Provider>
     )

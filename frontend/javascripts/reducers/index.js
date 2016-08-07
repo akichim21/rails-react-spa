@@ -1,5 +1,5 @@
-import todos from './todo/todos'
-import visibilityFilter from './todo/visibilityFilter'
+import todos from './todos/todos'
+import visibilityFilter from './todos/visibilityFilter'
 
 const index = {
   todos,

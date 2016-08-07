@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import { addTodo } from '../../actions/todo'
+import { addTodo } from '../../actions/todos'
 
 const AddTodo = ({ dispatch }) => {
   let input

@@ -1,6 +1,7 @@
-class TodoController < ApplicationController
+class TodosController < ApplicationController
   before_action :set_todo , only: [:show]
   def index
+    @todos = Todo.all
   end
 
   def show

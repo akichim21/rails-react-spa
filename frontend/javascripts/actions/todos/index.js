@@ -5,7 +5,7 @@ export const addTodo = (param) => {
   return {
     [CALL_API]: {
       types: [ types.ADD_TODO_REQUEST, types.ADD_TODO_SUCCESS, types.ADD_TODO_FAILURE ],
-      endpoint: 'todo.json',
+      endpoint: 'todos.json',
       param: { todo: param },
       method: "POST"
     }
