@@ -1,7 +1,14 @@
 import { camelizeKeys } from 'humps'
 import { MOCK_API } from './../constants/Api'
+import api from './../api'
 
 const mockEndpoint = {
+  'todos.json': {
+    'GET': api.todos.getTodos
+  },
+  'todos/\\d+.json': {
+    'PUT': api.todos.updateTodo
+  },
 }
 
 function getData(endpoint, method, param) {

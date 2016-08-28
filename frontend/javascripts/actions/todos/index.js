@@ -1,10 +1,10 @@
-import { CALL_API } from './../../constants/Api'
+import { MOCK_API, CALL_API } from './../../constants/Api'
 import * as types from './../../constants/ActionTypes'
 
-export const addTodo = (param) => {
+export const createTodo = (param) => {
   return {
     [CALL_API]: {
-      types: [ types.ADD_TODO_REQUEST, types.ADD_TODO_SUCCESS, types.ADD_TODO_FAILURE ],
+      types: [ types.CREATE_TODO_REQUEST, types.CREATE_TODO_SUCCESS, types.CREATE_TODO_FAILURE ],
       endpoint: 'todos.json',
       param: { todo: param },
       method: "POST"
@@ -12,16 +12,22 @@ export const addTodo = (param) => {
   }
 }
 
-export const setVisibilityFilter = (filter) => {
+export const fetchTodos = () => {
   return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
+    [MOCK_API]: {
+      types: [ types.FETCH_TODOS_REQUEST, types.FETCH_TODOS_SUCCESS, types.FETCH_TODOS_FAILURE ],
+      endpoint: "todos.json",
+    }
   }
 }
 
-export const toggleTodo = (id) => {
+export const updateTodo = (id, param) => {
   return {
-    type: 'TOGGLE_TODO',
-    id
+    [MOCK_API]: {
+      types: [ types.UPDATE_TODO_REQUEST, types.UPDATE_TODO_SUCCESS, types.UPDATE_TODO_FAILURE ],
+      endpoint: "todos/" + id + ".json",
+      param: { id: id,  todo: param },
+      method: "PUT"
+    }
   }
 }

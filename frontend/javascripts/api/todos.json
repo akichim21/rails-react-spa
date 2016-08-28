@@ -1,0 +1,6 @@
+[
+  { "id": 1, "text": "メールチェック", "is_completed": true },
+  { "id": 2, "text": "qiitaチェック",  "is_completed": true },
+  { "id": 3, "text": "昼寝",           "is_completed": true },
+  { "id": 4, "text": "お仕事",         "is_completed": false }
+]

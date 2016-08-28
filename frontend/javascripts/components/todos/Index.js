@@ -1,12 +1,10 @@
-import Footer from './Footer'
-import AddTodo from '../../containers/todos/AddTodo'
-import VisibleTodoList from '../../containers/todos/VisibleTodoList'
+import CreateTodo from '../../containers/todos/CreateTodo'
+import TodoList from '../../containers/todos/TodoList'
 
 const Index = () => (
   <div>
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
+    <CreateTodo />
+    <TodoList />
   </div>
 )
 
