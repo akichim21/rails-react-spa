@@ -1,19 +1,19 @@
 import { connect } from 'react-redux'
-import { updateTodo, fetchTodos } from '../../actions/todos'
-import TodoList from '../../components/todos/TodoList'
+import { fetchTodo } from '../../actions/todos'
+import Show from '../../components/todos/Show'
 import { bindActionCreators } from 'redux'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    todos: state.todos.todos
+    id: Number(ownProps.params.id),
+    todo: state.todos.todo
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators({
-      updateTodo,
-      fetchTodos
+      fetchTodo
     }, dispatch)
   }
 }
@@ -21,4 +21,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList)
+)(Show)

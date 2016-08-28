@@ -21,6 +21,15 @@ export const fetchTodos = () => {
   }
 }
 
+export const fetchTodo = (id) => {
+  return {
+    [CALL_API]: {
+      types: [ types.FETCH_TODO_REQUEST, types.FETCH_TODO_SUCCESS, types.FETCH_TODO_FAILURE ],
+      endpoint: "todos/" + id + ".json",
+    }
+  }
+}
+
 export const updateTodo = (id, param) => {
   return {
     [CALL_API]: {

@@ -1,17 +1,24 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
-const Todo = ({ onClick, isCompleted, text }) => (
-  <li>
-    <p style={{display: "inline", textDecoration: isCompleted ? 'line-through' : 'none'}}>{text}</p>
-    [<a>詳細</a>]
-    [<a onClick={onClick}>完了</a>]
-  </li>
-)
+export default class Todo extends React.Component {
+  render() {
+    const { id, isCompleted, text, onClick } = this.props
+    return (
+      <li>
+        <p style={{display: "inline", textDecoration: isCompleted ? 'line-through' : 'none'}}>{text}</p>
+        [<Link to={"todos/" + id }>詳細</Link>]
+        [<a href="#" onClick={onClick}>完了</a>]
+      </li>
+    )
+  }
+}
 
 Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
   isCompleted: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  onClick: PropTypes.func.isRequired,
 }
 
 export default Todo
