@@ -1,4 +1,4 @@
-import { MOCK_API, CALL_API } from './../../constants/Api'
+import { CALL_API } from './../../constants/Api'
 import * as types from './../../constants/ActionTypes'
 
 export const createTodo = (param) => {
@@ -14,7 +14,7 @@ export const createTodo = (param) => {
 
 export const fetchTodos = () => {
   return {
-    [MOCK_API]: {
+    [CALL_API]: {
       types: [ types.FETCH_TODOS_REQUEST, types.FETCH_TODOS_SUCCESS, types.FETCH_TODOS_FAILURE ],
       endpoint: "todos.json",
     }
@@ -23,7 +23,7 @@ export const fetchTodos = () => {
 
 export const updateTodo = (id, param) => {
   return {
-    [MOCK_API]: {
+    [CALL_API]: {
       types: [ types.UPDATE_TODO_REQUEST, types.UPDATE_TODO_SUCCESS, types.UPDATE_TODO_FAILURE ],
       endpoint: "todos/" + id + ".json",
       param: { id: id,  todo: param },
