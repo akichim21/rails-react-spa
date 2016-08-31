@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { addTodo } from '../../actions/todos'
 
 let input
 export default class CreateTodo extends React.Component {
@@ -31,4 +30,3 @@ CreateTodo.propTypes = {
     createTodo: PropTypes.func.isRequired
   })
 }
-export default CreateTodo

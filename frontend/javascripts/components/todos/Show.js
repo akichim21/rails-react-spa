@@ -7,7 +7,6 @@ export default class Show extends React.Component {
   }
   render() {
     const { todo } = this.props
-    console.log(typeof todo)
     if (typeof todo === "undefined") {
       return (<div></div>)
     }
@@ -32,5 +31,3 @@ Show.propTypes = {
     fetchTodo: PropTypes.func.isRequired,
   })
 }
-
-export default Show

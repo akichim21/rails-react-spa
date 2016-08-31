@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
 import Todo from './Todo'
 
 export default class TodoList extends React.Component {
@@ -34,5 +33,3 @@ TodoList.propTypes = {
     fetchTodos: PropTypes.func.isRequired,
   })
 }
-
-export default TodoList

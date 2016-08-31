@@ -42,4 +42,4 @@ export default class Todo extends React.Component {
 }
 Todo.propTypes = propTypes
 
-window.Todo = Todo;
+window.Todo = Todo

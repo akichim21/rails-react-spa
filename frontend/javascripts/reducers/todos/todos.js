@@ -21,9 +21,17 @@ const todos = (state = INITIAL_STATE, action) => {
           }
         })
       })
+    case types.FETCH_TODOS_REQUEST:
+      return Object.assign({}, state, {
+        todos: []
+      })
     case types.FETCH_TODOS_SUCCESS:
       return Object.assign({}, state, {
         todos: action.response.todos
+      })
+    case types.FETCH_TODO_REQUEST:
+      return Object.assign({}, state, {
+        todo: undefined
       })
     case types.FETCH_TODO_SUCCESS:
       return Object.assign({}, state, {

@@ -19,14 +19,14 @@ module.exports = {
         loader: 'babel?presets[]=react,presets[]=es2015,presets[]=stage-2'
       },
       { test: /\.json$/, loader: 'json' }
+    ],
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader"
+      }
     ]
-    //preLoaders: [
-    //  {
-    //    test: /\.jsx?$/,
-    //    exclude: /node_modules/,
-    //    loader: "eslint-loader"
-    //  }
-    //]
   },
   eslint: {
     configFile: './.eslintrc.json'

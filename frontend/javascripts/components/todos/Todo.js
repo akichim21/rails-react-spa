@@ -8,7 +8,7 @@ export default class Todo extends React.Component {
       <li>
         <p style={{display: "inline", textDecoration: isCompleted ? 'line-through' : 'none'}}>{text}</p>
         [<Link to={"todos/" + id }>詳細</Link>]
-        [<a href="#" onClick={onClick}>完了</a>]
+        [<a href="#" onClick={onClick}>{isCompleted ? "未完了" : "完了"}にする</a>]
       </li>
     )
   }
@@ -20,5 +20,3 @@ Todo.propTypes = {
   isCompleted: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 }
-
-export default Todo

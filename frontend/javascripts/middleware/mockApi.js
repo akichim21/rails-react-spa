@@ -7,7 +7,8 @@ const mockEndpoint = {
     'GET': api.todos.getTodos
   },
   'todos/\\d+.json': {
-    'PUT': api.todos.updateTodo
+    'PUT': api.todos.updateTodo,
+    'GET': api.todos.getTodo
   },
 }
 

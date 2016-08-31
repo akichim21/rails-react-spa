@@ -1,7 +1,7 @@
 import _todos from './todos.json'
 
 export default {
-  getTodos(param) {
+  getTodos() {
     let todos = _todos
     return { todos: todos }
   },
