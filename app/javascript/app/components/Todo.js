@@ -1,4 +1,6 @@
 import 'babel-polyfill'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { Router, Route, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { combineReducers } from 'redux'
@@ -22,7 +24,7 @@ const store = process.env.NODE_ENV === 'production' ? prodConfigureStore(storeAr
 const history = syncHistoryWithStore(browserHistory, store)
 
 const propTypes = {
-  token: React.PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
 }
 
 export default class Todo extends React.Component {
@@ -41,5 +43,3 @@ export default class Todo extends React.Component {
   }
 }
 Todo.propTypes = propTypes
-
-window.Todo = Todo

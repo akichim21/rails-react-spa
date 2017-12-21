@@ -1,5 +1,6 @@
 class TodosController < ApplicationController
   before_action :set_todo , only: [:show, :update]
+  around_action :hypernova_render_support
   def index
     @todos = Todo.all
   end

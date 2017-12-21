@@ -35,3 +35,6 @@ node_modules/
 # Ignore Byebug command history file.
 .byebug_history
 .env
+/public/packs
+/public/packs-test
+/node_modules

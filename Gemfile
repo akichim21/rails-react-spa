@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'devise'
-gem 'react-rails'
+gem 'webpacker'
+gem 'hypernova'
 gem 'mysql2'
 
 group :development, :test do

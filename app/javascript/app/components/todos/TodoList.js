@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Todo from './Todo'
+import PropTypes from 'prop-types'
 
 export default class TodoList extends React.Component {
   componentWillMount() {
